@@ -1,0 +1,33 @@
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  margin-bottom: 36px;
+  .links {
+    display: flex;
+    justify-content: space-between;
+    gap: 64px;
+    /* @media (max-width: breakpoints.$max-mobile-width) {
+       gap: 24px;
+     }*/
+    article {
+      padding: 8px 16px;
+      border-radius: 4px;
+      box-sizing: border-box;
+      cursor: pointer;
+      transition: 0.2s background-color;
+      //font-weight: 600;
+      font-weight: 400;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color:  #AD8B73;
+      }
+      &.active {
+        background-color:  #AD8B73;
+      }
+    }
+  }
+}

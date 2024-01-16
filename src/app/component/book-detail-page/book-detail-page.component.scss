@@ -1,0 +1,102 @@
+.card {
+  margin: 0 auto;
+  max-width: 500px;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFBE9;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+}
+
+.card-image {
+  flex: 1;
+  padding: 16px;
+}
+
+img.mat-card-image {
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.card-text {
+  flex: 2;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .text-content {
+    text-align: center;
+
+    mat-card-header{
+      padding: 16px;
+    }
+
+    p {
+      font-weight: 200;
+      text-transform: uppercase;
+      font-family: var(--font-sans);
+      width: 100%;
+      z-index: 100;
+      font-size: 13px;
+      letter-spacing: .075em;
+      background-color: var(--color-softGreen);
+      transform: translateY(0);
+      transition: transform .3s;
+      margin-bottom: 0;
+    }
+  }
+
+  .scrollable-card-content {
+    max-height: 300px;
+    overflow-y: auto;
+
+    .scrollable-card-text {
+      padding: 10px;
+
+      p{
+        text-align: justify;
+      }
+    }
+  }
+
+}
+mat-card {
+  border-radius: 15px;
+}
+
+p {
+  color: #717274;
+  cursor: default;
+  font-family: Lato,sans-serif;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.5;
+
+}
+
+ mat-card-subtitle{
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+  width: 100%;
+  z-index: 100;
+  font-size: 13px;
+  letter-spacing: .075em;
+  background-color: var(--color-softGreen);
+  transform: translateY(0);
+  transition: transform .3s;
+
+}
+
+mat-card-title{
+  font-family: 'Playfair Display', serif;
+}
+
+

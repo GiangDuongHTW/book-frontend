@@ -1,0 +1,49 @@
+.form {
+  display: flex;
+  justify-content: center;
+
+}
+
+.book-list {
+  display: flex;
+  justify-content: center;
+  padding: 48px;
+  align-items: flex-start;
+  min-height: 100vh;
+  gap: 16px;
+
+  .book-card {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    border-radius: 16px;
+    background-color: #FFFBE9;
+  }
+}
+
+.book-title {
+  font-size: 16px;
+  align-items: center;
+  font-family: 'Playfair Display', serif;
+}
+
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+mat-progress-spinner {
+  margin-bottom: 16px;
+}
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+<mat-card class="card" *ngIf="book$ | async as book">
+  <div class="card-content">
+    <div class="card-image">
+      <img mat-card-image src="assets/book1.jpg" alt="{{ book.title }}" width="200" height="250"/>
+    </div>
+    <div class="card-text">
+      <div class="text-content">
+        <mat-card-header>
+          <mat-card-title>{{ book.title }}</mat-card-title>
+          <mat-card-subtitle>{{ book.subtitle }}</mat-card-subtitle>
+        </mat-card-header>
+        <p>ISBN: {{ book.isbn }}</p>
+        <p>Autoren:
+          <span *ngFor="let author of book.authors; let last = last">
+          {{ author }}
+            <ng-container *ngIf="!last">, </ng-container>
+        </span>
+        </p>
+        <p>Verlag: {{ book.publisher }}</p>
+      </div>
+      <mat-card-content class="scrollable-card-content">
+        <div class="scrollable-card-text">
+          <p>{{ book.description }}</p>
+        </div>
+      </mat-card-content>
+    </div>
+  </div>
+</mat-card>
+

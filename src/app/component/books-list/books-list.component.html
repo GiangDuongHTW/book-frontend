@@ -1,0 +1,23 @@
+<div class="outer">
+  <div *ngFor="let book of books$ | async" class="books">
+    <mat-card class="cards">
+      <mat-card-header>
+        <mat-card-title> {{ book.title }}</mat-card-title>
+        <mat-card-subtitle>{{ book.subtitle }}</mat-card-subtitle>
+        <mat-card-actions>
+          <button
+            mat-icon-button
+            (click)="goToDetailPage(book.id)"
+            matTooltip="View Details"
+          >
+            <mat-icon>open_in_new</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ book.description }}</p>
+        <mat-divider></mat-divider>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

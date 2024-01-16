@@ -1,0 +1,19 @@
+table {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  background-color: #FFFBE9;
+  th {
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+  }
+  td {
+    color: #717274;
+    cursor: default;
+    font-family: Lato,sans-serif;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: justify
+   }
+}

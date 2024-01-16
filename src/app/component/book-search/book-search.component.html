@@ -1,0 +1,30 @@
+<form [formGroup]="searchForm" class="form" appearance="outline" >
+  <mat-form-field appearance="outline" class="search">
+    <mat-label>Search book by name</mat-label>
+    <input matInput type="text" formControlName="search" >
+    <mat-icon matSuffix>search</mat-icon>
+    <mat-hint>Enter a book title to search</mat-hint>
+  </mat-form-field>
+</form>
+
+<div *ngIf="isLoading$ | async; else booksList" >
+  <div class="loading-container">
+    <mat-progress-spinner mode="indeterminate" value="100">
+    </mat-progress-spinner>
+    <p>Loading...</p>
+  </div>
+</div>
+
+<ng-template #booksList>
+  <div class="book-list">
+    <ng-container *ngFor="let book of booksBySearch$ | async">
+        <mat-card class="book-card">
+          <mat-card-content>
+            <p class="book-title">{{ book.title }}</p>
+          </mat-card-content>
+        </mat-card>
+    </ng-container>
+</div>
+</ng-template>
+
+
