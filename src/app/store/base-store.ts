@@ -1,5 +1,6 @@
 import { BehaviorSubject, distinctUntilChanged, map, Observable } from 'rxjs';
-export class BaseStore<T> {
+import {BaseState} from "../model/base-state";
+export class BaseStore<T extends BaseState> {
   state$: Observable<T>;
   readonly initialState?: T;
 
@@ -11,13 +12,18 @@ export class BaseStore<T> {
     this.state$ = this._state$.asObservable();
   }
 
+  get isLoading$(): Observable<boolean> {
+    return this.state$.pipe(
+      map(state => state.loading),
+    );
+  }
   get state(): T {
     return this._state$.getValue();
   }
 
   get$<K>(property: keyof T): Observable<K> {
     return this.state$.pipe(
-      map((state) => state[property] as unknown as K),
+      map((state) => state[property] as K),
       distinctUntilChanged(),
     );
   }
@@ -38,9 +44,5 @@ export class BaseStore<T> {
       ...this.state,
       loading,
     });
-  }
-
-  clear() {
-    this._state$.next(this.initialState!);
   }
 }
